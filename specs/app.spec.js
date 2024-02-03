@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import { nameIsValid, fullTrim, getTotal } from "../src/app.js";
+import { nameIsValid, fullTrim, getTotal, getScore } from "../src/app.js";
 
 describe("Unit tests", () => {
   describe("Test of the nameIsValid function", () => {

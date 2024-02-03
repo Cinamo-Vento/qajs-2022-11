@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-unused-vars
+
 /**
  * Проверка имени пользователя
  * @param {string} name
@@ -39,4 +41,27 @@ export const getTotal = (items = [], discount = 0) => {
     return acc + item.price * item.quantity;
   }, 0);
   return total - (total * discount) / 100;
+};
+
+/**
+ * Метод возвращает сумму баллов всех студентов
+ * @param {{ name: string, score: number }} scores
+ * @example getScore({"Mark": 5, "Jain": 4, "Paul": 3}); // 12
+ * @returns Сумма баллов
+ */
+export const getScore = (scores) => {
+  let totalScore = 0;
+  for (let student in scores) {
+    let type = typeof scores[student];
+
+    switch (type) {
+      case "number":
+        totalScore = totalScore + scores[student];
+        break;
+
+      default:
+        return `Некорретное значение для ${student}. Баллы должны быть представлены числом`;
+    }
+  }
+  return totalScore;
 };
